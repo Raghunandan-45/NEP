@@ -32,9 +32,6 @@ app.listen(PORT, ()=> {
 });
 
 
-//3 situations where graceful handling is useful
-
-//1. Handle unhandled promise rejections (e.g., database connection errors)
 process.on("unhandledRejection", (err) =>{
     console.error("Unhandled Rejection:",err);
     Server.close(async () =>{
@@ -43,14 +40,12 @@ process.on("unhandledRejection", (err) =>{
     });
 });
 
-//2.Handle uncaught exceptions
 process.on("uncaughtException", async (err) => {
     console.error("Uncaught Exception",err);
     await disconnectDB();
     process.exit(1);
 });
 
-//3.Graceful shutdown
 process.on("SIGTERM", async () => {
     console.log("SIGTERM received, shutting down gracefully!");
     Server.close(async () =>{
