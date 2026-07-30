@@ -13,7 +13,7 @@ connectDB();
 
 const app = express();
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Body parsing Middleware
 app.use(express.json());
