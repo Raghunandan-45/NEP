@@ -29,7 +29,7 @@ app.use("/hello", (req,res) =>{
     res.json({message:"HELLO WORLD~!"});
 });
 
-app.listen(PORT, ()=> {
+const server = app.listen(PORT, ()=> {
     console.log(`Server running on PORT ${PORT}`);
 });
 
