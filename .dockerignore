@@ -5,3 +5,5 @@ node_modules
 npm-debug.log
 Dockerfile
 README.md
+logs.csv
+movie-watchlist-504104-677aed8599f1.json
