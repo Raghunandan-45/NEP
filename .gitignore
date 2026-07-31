@@ -3,3 +3,5 @@ node_modules
 .env
 
 /src/generated/prisma
+logs.csv
+movie-watchlist-504104-677aed8599f1.json
